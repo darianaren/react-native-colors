@@ -1,12 +1,12 @@
+import { useColorScheme } from 'react-native';
 import '../global.css';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-
-import { Stack } from 'expo-router';
-
+import { DarkTheme, DefaultTheme, Stack, ThemeProvider } from 'expo-router';
 export default function Layout() {
+  const colorScheme = useColorScheme();
+  console.log(colorScheme);
   return (
-    <SafeAreaProvider>
+    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack />
-    </SafeAreaProvider>
+    </ThemeProvider>
   );
 }
