@@ -21,11 +21,13 @@ export default function ThemedView({
   const safeArea = useSafeAreaInsets();
   return (
     <View
+      className={className}
       style={{
         backgroundColor,
         flex: 1,
         paddingTop: safe ? safeArea.top : 0,
         marginHorizontal: margin ? 10 : 0,
+        ...style,
       }}>
       {children}
     </View>
