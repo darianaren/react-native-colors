@@ -1,9 +1,10 @@
-import { Text, View } from 'react-native';
+import ThemedView from '@/presentation/shared/ThemedView';
+import { Text } from 'react-native';
 
 export default function Home() {
   return (
-    <View className="bg-light-background dark:bg-dark-background flex-1">
+    <ThemedView>
       <Text className="text-3xl">Hola mundo</Text>
-    </View>
+    </ThemedView>
   );
 }
