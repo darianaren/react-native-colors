@@ -1,10 +1,30 @@
-import { View, Text } from 'react-native';
+import ThemedCard from '@/presentation/shared/ThemedCard';
+import ThemedText from '@/presentation/shared/ThemedText';
+import ThemedTextInput from '@/presentation/shared/ThemedTextInput';
+import ThemedView from '@/presentation/shared/ThemedView';
+import { useState } from 'react';
+import { TextInput } from 'react-native';
 
 const TextInputsScreen = () => {
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    phone: '',
+  });
   return (
-    <View>
-      <Text>TextInputsScreen</Text>
-    </View>
+    <ThemedView>
+      <ThemedCard>
+        <ThemedTextInput
+          placeholder="Nombre Completo"
+          autoCapitalize="words"
+          onChangeText={(text) => setForm({ ...form, name: text })}
+        />
+      </ThemedCard>
+
+      <ThemedCard className="mt-4">
+        <ThemedText>{JSON.stringify(form, null, 2)}</ThemedText>
+      </ThemedCard>
+    </ThemedView>
   );
 };
 export default TextInputsScreen;
