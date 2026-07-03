@@ -21,6 +21,22 @@ const TextInputsScreen = () => {
         />
       </ThemedCard>
 
+      <ThemedCard>
+        <ThemedTextInput
+          placeholder="Correo electrónico"
+          keyboardType="email-address"
+          onChangeText={(text) => setForm({ ...form, email: text })}
+        />
+      </ThemedCard>
+
+      <ThemedCard>
+        <ThemedTextInput
+          placeholder="Teléfono"
+          keyboardType="number-pad"
+          onChangeText={(text) => setForm({ ...form, phone: text })}
+        />
+      </ThemedCard>
+
       <ThemedCard className="mt-4">
         <ThemedText>{JSON.stringify(form, null, 2)}</ThemedText>
       </ThemedCard>
