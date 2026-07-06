@@ -3,7 +3,6 @@ import ThemedText from '@/presentation/shared/ThemedText';
 import ThemedTextInput from '@/presentation/shared/ThemedTextInput';
 import ThemedView from '@/presentation/shared/ThemedView';
 import { useState } from 'react';
-import { TextInput } from 'react-native';
 
 const TextInputsScreen = () => {
   const [form, setForm] = useState({
